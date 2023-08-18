@@ -13,7 +13,7 @@
     </ion-toolbar>
   </ion-header>
 
-  <div id="container">
+  <div *ngIf="'{{usuario}}'" id="container">
     <ion-button [routerLink]="'/login'" expand="block" fill="clear" shape="round">
       <strong>Login</strong>
     </ion-button>

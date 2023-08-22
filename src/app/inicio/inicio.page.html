@@ -16,13 +16,25 @@
     <h3>Información Adicional </h3>
 
     <ion-list>
-      <ion-item>
-        <ion-label position="floating">Nombre</ion-label>
-        <ion-input [(ngModel)]="nombre" placeholder="Ingrese su nombre"></ion-input>
+      <ion-item class="ion-align-items-center">
+        <div class="row">
+          <div class="col">
+            <ion-label >Nombre</ion-label>
+          </div>
+          <div class="col">
+            <ion-input [(ngModel)]="nombre" id="nombreIn" placeholder="Ingrese su nombre"></ion-input>
+          </div>
+        </div>
       </ion-item>
-      <ion-item>
-        <ion-label position="floating">Apellido</ion-label>
-        <ion-input [(ngModel)]="apellido" placeholder="Ingrese su apellido"></ion-input>
+      <ion-item class="ion-align-items-center">
+        <div class="row">
+          <div class="col">
+            <ion-label >Apellido</ion-label>
+          </div>
+          <div class="col">
+            <ion-input [(ngModel)]="apellido" id="apellidoIn" placeholder="Ingrese su apellido"></ion-input>
+          </div>
+        </div>
       </ion-item>
       <ion-item>
         <ion-label position="floating">Nivel de educación</ion-label>
@@ -34,7 +46,13 @@
       </ion-item>
       <ion-item>
         <ion-label position="floating">Fecha de nacimiento</ion-label>
-        <ion-input [(ngModel)]="fechaNacimiento" type="date"></ion-input>
+        <mat-form-field>
+          <mat-label>Choose a date</mat-label>
+          <input matInput [matDatepicker]="picker">
+          <mat-hint>MM/DD/YYYY</mat-hint>
+          <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
       </ion-item>
     </ion-list>
     <ion-button expand="full" (click)="limpiar()">Limpiar</ion-button>

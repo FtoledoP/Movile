@@ -25,32 +25,23 @@ export class HomePage {
     // Verifica si el elemento existe antes de continuar
     if (cardElement) {
       this.animation = this.animationCtrl
-        .create()
-        .addElement(cardElement)
-        .duration(1500)
-        .iterations(Infinity)
-        .fromTo('transform', 'translateX(0px)', 'translateX(100px)')
-        .fromTo('opacity', '1', '0.2');
+      .create()
+  .addElement(cardElement)
+  .duration(2500)
+  .iterations(Infinity)
+  .keyframes([
+    { offset: 0, transform: 'translateX(0px)', opacity: '1' },
+    { offset: 0.4, transform: 'translateX(100%)', opacity: '0' },
+    { offset: 0.6, transform: 'translateX(-100%)', opacity: '0' },
+    { offset: 1, transform: 'translateX(0px)', opacity: '1' }
+  ]);
+  this.animation.play(); 
     } else {
       console.error('El elemento con el ID "card" no se encontró en el DOM.');
     }
   }
-  
-  
 
-  play() {
-    this.animation.play();
-  }
 
-  pause() {
-    this.animation.pause();
-  }
-
-  stop() {
-    this.animation.stop();
-  }
-
-  
 
   }
 

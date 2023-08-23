@@ -89,5 +89,4 @@ export class InicioPage implements OnInit {
     console.log("Ha pasado un segundo");
   }
 
-
 }

@@ -8,6 +8,8 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatFormFieldControl } from '@angular/material/form-field';
 
 @NgModule({
   declarations: [AppComponent],
@@ -15,7 +17,8 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
     IonicModule.forRoot(), 
     AppRoutingModule,
     ReactiveFormsModule,
-    MatSlideToggleModule],
+    MatSlideToggleModule,
+    MatNativeDateModule],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
 })

@@ -14,6 +14,7 @@ import {MatNativeDateModule} from '@angular/material/core';
 })
 export class InicioPage implements OnInit {
   private animation:Animation = createAnimation('')
+  selectedDate: Date | null = null;
   usuario: string = '';
   nombre: string = '';
   apellido: string = '';
@@ -62,7 +63,7 @@ export class InicioPage implements OnInit {
     this.nombre = '';
     this.apellido = '';
     this.nivelEducacion = '';
-    this.fechaNacimiento = '';
+    this.selectedDate = null;
   }
 
   async mostrar() {

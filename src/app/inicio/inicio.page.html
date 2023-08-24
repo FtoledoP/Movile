@@ -46,7 +46,10 @@
       </ion-item>
       
       <ion-item>
-        <ion-label position="floating">Fecha de nacimiento</ion-label>
+        <input matInput [matDatepicker]="picker" [(ngModel)]="selectedDate">
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
       </ion-item>
     </ion-list>
     <ion-button expand="full" (click)="limpiar()">Limpiar</ion-button>
